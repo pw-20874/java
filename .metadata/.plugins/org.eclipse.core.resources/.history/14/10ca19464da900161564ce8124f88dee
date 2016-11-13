@@ -1,5 +1,7 @@
+import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
+import javax.swing.Timer;
 
 public class HelloWorld {
 	
@@ -17,9 +19,10 @@ public class HelloWorld {
 									+ e.getSalary() + ", hire day = " + e.getHireDay());
 		}
 		
-		new TalkingClock(1000, true).start();
-
-		/* Keep program running until user click "OK" */
+		ActionListener listener = new TimePrinter();
+		
+		new Timer(3000, listener).start();
+		
 		JOptionPane.showMessageDialog(null, "Quit program?");
 		System.exit(0);
 	}

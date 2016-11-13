@@ -1,0 +1,14 @@
+
+public class TalkingClock {
+
+	
+	public TalkingClock(int interval, boolean beep)
+	{
+		this.interval = interval;
+		this.beep = beep;
+	}
+	
+	private int interval;
+	private boolean beep;
+	
+}

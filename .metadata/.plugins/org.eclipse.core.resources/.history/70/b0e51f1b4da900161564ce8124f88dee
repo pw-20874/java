@@ -1,0 +1,23 @@
+import java.awt.event.ActionListener;
+
+import javax.swing.Timer;
+
+public class TalkingClock {
+
+	
+	public TalkingClock(int interval, boolean beep)
+	{
+		this.interval = interval;
+		this.beep = beep;
+	}
+	
+	public void start()
+	{
+		ActionListener listener = new TimePrinter();
+		new Timer(3000, listener).start();
+	}
+	
+	private int interval;
+	private boolean beep;
+	
+}

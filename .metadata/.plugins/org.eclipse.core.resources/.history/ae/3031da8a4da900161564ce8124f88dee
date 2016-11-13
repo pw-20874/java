@@ -16,8 +16,6 @@ public class HelloWorld {
 			System.out.println("name = " + e.getName() + ", salary = " 
 									+ e.getSalary() + ", hire day = " + e.getHireDay());
 		}
-		
-		new TalkingClock(1000, true).start();
 
 		/* Keep program running until user click "OK" */
 		JOptionPane.showMessageDialog(null, "Quit program?");
