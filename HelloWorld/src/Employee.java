@@ -1,6 +1,7 @@
 import java.util.*;
 
-public class Employee {
+public class Employee implements Comparable<Employee>
+{
 
 	public Employee (String n, double s, int year, int month, int day) {
 		name = n;
@@ -29,6 +30,17 @@ public class Employee {
 	{
 		double raise = salary * byPercent / 100;
 		salary += raise;
+	}
+	
+	public int compareTo(Employee other)
+	{
+		if (salary < other.salary) {
+			return -1;
+		} else if (salary > other.salary) {
+			return 1;
+		} else {
+			return 0;
+		}
 	}
 	
 	private String name;

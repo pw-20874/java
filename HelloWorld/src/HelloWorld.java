@@ -1,35 +1,30 @@
+import java.awt.event.*;
 import java.util.*;
+import javax.swing.*;
+import javax.swing.Timer;
 
 public class HelloWorld {
 	
 	public static void main(String[] args) {
 		
-		// TODO Auto-generated method stub
-		System.out.println("Hello world!");
-
-		int[] smallPrimes = {2, 3, 5, 7, 11, 13};
-		int[] luckNumbers = {1001, 1002, 1003, 1004, 1005, 1006, 1007};
-		
-		for (int k=0; k<smallPrimes.length; k++) {
-			System.out.print(smallPrimes[k] + " " + "\n");
-		}
-		
-		System.arraycopy(smallPrimes, 2, luckNumbers, 5, 2);
-		
-		for (int k=0; k<luckNumbers.length; k++) {
-			System.out.print(luckNumbers[k] + " " + "\n");
-		}
-		
 		Employee[] staff = new Employee[3];
-		staff[0] = new Employee("John", 50000, 1995, 5, 15);
+		staff[0] = new Employee("John", 150000, 1995, 5, 15);
 		staff[1] = new Employee("Peter", 60000, 1996, 5, 15);
 		staff[2] = new Employee("Matt", 70000, 1997, 5, 15);
+		
+		Arrays.sort(staff);
 		
 		for (Employee e:staff) {
 			System.out.println("name = " + e.getName() + ", salary = " 
 									+ e.getSalary() + ", hire day = " + e.getHireDay());
 		}
 		
+		ActionListener listener = new TimePrinter();
+		
+		new Timer(3000, listener).start();
+		
+		JOptionPane.showMessageDialog(null, "Quit program?");
 	}
+	
 
 }
